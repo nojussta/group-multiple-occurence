@@ -14,17 +14,18 @@ public class Main {
     }
 
     public static ArrayList<Integer> groupNumbers(int[] input) {
+        HashMap<Integer, Integer> index = new HashMap<>();
         ArrayList<Integer> result = new ArrayList<>();
-        HashMap<Integer, Integer> newMap = new HashMap<>();
-        for (int i : input) {
-            newMap.put(i, newMap.getOrDefault(i, 0) + 1);
-        }
-        for (int i : newMap.keySet()) {
-            int count = newMap.get(i);
-            for (int j = 0; j < count; j++) {
-                result.add(i);
+
+        for (int i = 0; i < input.length; i++) {
+            if (!index.containsKey(input[i])) {
+                index.put(input[i], i);
+                result.add(input[i]);
+            } else {
+                result.add(index.get(input[i]), input[i]);
             }
         }
+
         return result;
     }
 
