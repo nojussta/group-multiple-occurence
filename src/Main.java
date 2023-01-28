@@ -31,7 +31,7 @@ public class Main {
 
     public static ArrayList<Integer> MostFrequent(int arr[]) {
         Map<Integer, Integer> hp = new HashMap<>();
-        ArrayList<Integer> answ = new ArrayList<>();
+        ArrayList<Integer> result = new ArrayList<>();
 
         for (int i = 0; i < arr.length; i++) {
             int key = arr[i];
@@ -40,14 +40,14 @@ public class Main {
                 freq++;
                 hp.put(key, freq);
             } else {
-                answ.add(key);
+                result.add(key);
                 hp.put(key, 1);
             }
         }
 
         ArrayList<Integer> rez = new ArrayList<>();
-        for (int i = 0; i < answ.size(); i++) {
-            int key = answ.get(i);
+        for (int i = 0; i < result.size(); i++) {
+            int key = result.get(i);
             int freq = hp.get(key);
             for (int l = 0; l < freq; l++) {
                 rez.add(key);
