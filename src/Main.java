@@ -4,12 +4,12 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = {110, 124, 110, 110, 55, 44, 55, 44, 2, 2, 1, 2, 3};
-//        ArrayList<Integer> answ = MostFrequent(arr);
-//        for (Integer value : answ) {
-//            System.out.println(value);
-//        }
-        ArrayList<Integer> groupedNumbers = groupNumbers(arr);
+        int[] input = {110, 124, 110, 110, 55, 44, 55, 44, 2, 2, 1, 2, 3};
+        ArrayList<Integer> mostFrequent = MostFrequent(input);
+        for (Integer value : mostFrequent) {
+            System.out.println(value);
+        }
+        ArrayList<Integer> groupedNumbers = groupNumbers(input);
         System.out.println(groupedNumbers);
     }
 
